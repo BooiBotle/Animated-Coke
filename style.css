@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background-color: #242424;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card{
+    position: relative;
+    height: 350px;
+    width: 350px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.card:hover{
+    width: 600px;
+}
+
+.card .circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .circle::before{
+    content: "";
+    position: absolute;
+    background-color: #242424;
+    border: solid 8px #ba0000;
+    filter: drop-shadow(0 0 10px #ba0000) drop-shadow(0 0 60px #ba0000);
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    transition: 0.5s, background 0.5s;
+    transition-delay: 0.75s, 1s;
+}
+
+.card:hover .circle::before{
+    background-color: #ba0000;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.card .circle .logo{
+    position: relative;
+    width: 250px;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+}
+
+.card:hover .circle .logo{
+    transform: scale(0);
+    transition-delay: 0s;
+}
+
+.card .can{
+    position: absolute;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0) rotate(240deg);
+    transition: 0.5s ease-in-out;
+}
+
+.card:hover .can{
+    transition-delay: 0.5s;
+    height: 350px;
+    top: 25%;
+    left: 80%;
+    transform: translate(-30%, -65%) scale(1) rotate(20deg);
+}
+
+.card .content{
+    position: absolute;
+    left: 10%;
+    width: 70%;
+    visibility: hidden;
+    opacity: 0;
+    padding: 20px;
+    transition: 0.5s;
+}
+
+.card:hover .content{
+    visibility: visible;
+    opacity: 1;
+    left: 20px;
+    transition-delay: 0.5s;
+}
+
+.card .content h2{
+    color: #fff;
+    font-size: 40px;
+}
+
+.card .content p{
+    color: #fff;
+}
